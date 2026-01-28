@@ -22,6 +22,9 @@ const waitForDb = async (retries = 10, delay = 3000) => {
   throw new Error('Database not available');
 };
 
-waitForDb();
+
+if (process.env.NODE_ENV !== 'test') {
+  waitForDb();
+}
 
 module.exports = pool;

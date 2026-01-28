@@ -9,6 +9,7 @@ RUN npm ci
 COPY src ./src
 COPY tests ./tests
 
+ENV NODE_ENV=test
 RUN npm test
 
 # ===== STAGE 2: runtime =====
